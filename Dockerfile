@@ -11,7 +11,6 @@ RUN apt update && \
     rm -rf /var/cache/apk/*
 
 
-
 FROM alpine:latest
 ENV TOMCAT_VERSION 8.5.50
 EXPOSE 8080
@@ -28,6 +27,6 @@ RUN apk update && apk upgrade && \
     apk del wget && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
-COPY --from=build /home/app42/target/app42.war /usr/local/tomcat/webapps
-COPY Config.properties /usr/local/tomcat/ROOT/
+COPY --from=build /home/ubuntu/target/app42.war /usr/local/tomcat/webapps
+COPY WebContent/Config.properties /usr/local/tomcat/ROOT/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
