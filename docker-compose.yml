@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   web:
     build: .
@@ -7,7 +6,6 @@ services:
       - "8080:8080"
     networks:
       - app42net
-
   db:
     image: mysql:5
   environment:
@@ -21,6 +19,5 @@ services:
         target: /var/lib/mysql
     networks:
       - app42net
-
 networks:
   app42net:
