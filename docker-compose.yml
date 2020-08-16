@@ -8,3 +8,5 @@ services:
     networks:
       - app42_net
 
+  db:
+    image: mysql:5
