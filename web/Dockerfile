@@ -5,7 +5,7 @@ WORKDIR $DIRPATH
 RUN apt update && \
     apt install maven git  -y &&\
     git clone https://github.com/Anakin174/HM_lesson12.git $DIRPATH && \
-    mvn -f pom.xml clean  $DIRPATH && \
+    mvn -f pom.xml clean package $DIRPATH && \
     apt remove git -y  && \
     mv ./target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war ./target/app42.war && \
     rm -rf /var/cache/apk/*
