@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.04 as maven
 MAINTAINER Vlad Kamerdinerov <anakin174jedi@gmail.com>
 ENV DIRPATH=/home/ubuntu
 WORKDIR $DIRPATH
@@ -27,6 +27,6 @@ RUN apk update && apk upgrade && \
     apk del wget && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
-COPY --from=build /home/ubuntu/target/app42.war /opt/local/tomcat/webapps
+COPY --from=maven /home/ubuntu/target/app42.war /opt/local/tomcat/webapps
 COPY ../WebContent/Config.properties /usr/local/tomcat/ROOT/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
