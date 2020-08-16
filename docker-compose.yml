@@ -1,8 +1,8 @@
-version: '3.8'
+version: '3'
 
 services:
   web:
-    build: web
+    build: .
     ports:
       - "8080:8080"
     networks:
