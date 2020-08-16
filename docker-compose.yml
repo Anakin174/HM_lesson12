@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - app42_net
+      - app42net
 
   db:
     image: mysql:5
@@ -20,7 +20,7 @@ services:
         source: ./mysql
         target: /var/lib/mysql
     networks:
-      - app42_net
+      - app42net
 
 networks:
-  app42_net:
+  app42net:

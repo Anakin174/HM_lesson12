@@ -27,6 +27,6 @@ RUN apk update && apk upgrade && \
     apk del wget && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
-COPY --from=build /home/ubuntu/target/app42.war /usr/local/tomcat/webapps
+COPY --from=build /home/ubuntu/target/app42.war /opt/local/tomcat/webapps
 COPY WebContent/Config.properties /usr/local/tomcat/ROOT/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
