@@ -1,11 +1,9 @@
 Getting Started with App42PaaS-Java-MySQL-Sample Application:
 ----------------------------------------------------
 
-This application is basically a simple User Input Form that takes input from user and saves it in database.
 
-<b>[Download the source code from git.](https://github.com/shephertz/App42PaaS-Java-MySQL-Sample/archive/master.zip)</b>
 
-Note: This project is build with java 6.
+- Check:  http://localhost:8080/app42/
 
 
 STS/Eclipse Configuration:
