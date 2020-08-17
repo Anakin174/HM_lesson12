@@ -28,5 +28,5 @@ RUN apk update && apk upgrade && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
 COPY --from=maven /home/ubuntu/target/app42.war /opt/local/tomcat/webapps
-COPY Config.properties /usr/local/tomcat/ROOT/
+COPY /WebContent/Config.properties /opt/local/tomcat/ROOT/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
