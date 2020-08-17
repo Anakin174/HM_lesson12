@@ -3,6 +3,7 @@ services:
   web:
     build: web
     ports:
+#if 8080 used
       - "8181:8080"
     networks:
       - app42net
