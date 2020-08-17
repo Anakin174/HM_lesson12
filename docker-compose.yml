@@ -1,3 +1,4 @@
+#use 3.2 or higher
 version: '3.2'
 services:
   web:
