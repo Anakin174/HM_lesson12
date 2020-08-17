@@ -27,10 +27,10 @@ RUN apk update && apk upgrade && \
     apk del wget && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
-COPY --from=maven /home/ubuntu/target/app42.war /opt/local/tomcat/webapps
-COPY Config.properties /usr/local/tomcat/ROOT/
+COPY --from=maven /home/ubuntu/target/app42.war /opt/tomcat/webapps
+COPY Config.properties /opt/tomcat/webapps/ROOT/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
 #FROM tomcat:8.0-alpine
 #COPY --from=maven //home/ubuntu/target/app42.war /usr/local/tomcat/webapps
-#COPY Config.properties /usr/local/tomcat/ROOT/
+#COPY Config.properties
