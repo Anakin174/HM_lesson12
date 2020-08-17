@@ -32,4 +32,4 @@ RUN apt update && \
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 FROM tomcat:8.0-alpine
 COPY --from=maven //home/ubuntu/target/app42.war /usr/local/tomcat/webapps
-ADD ./WebContent/Config.properties /usr/local/tomcat/ROOT/
+COPY Config.properties /usr/local/tomcat/ROOT/
